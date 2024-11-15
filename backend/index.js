@@ -18,6 +18,8 @@ app.use(express.static("public"))
 app.use(express.json());
 app.use('/api/users/', require('./routes/usersRoutes'))
 app.use(carsRoute);
-
+app.get("/", (req, res) => {
+    res.json("Backend Working")
+})
 app.listen(port, () => console.log(`node js server started in ${port}`));
 
