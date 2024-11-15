@@ -5,7 +5,13 @@ const db = require('./db');
 const carsRoute = require('./routes/carsRoutes');
 const cors = require("cors");
 
-app.use(cors());
+app.use(cors(
+    {
+        orgin: ["https://dwada.vercil.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 app.use(express.static("public"))
 
 
