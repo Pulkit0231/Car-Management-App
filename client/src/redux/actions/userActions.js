@@ -5,7 +5,7 @@ import axios from "axios";
 export const userLogin = (reqobj) => async dispatch => {
     dispatch({ type: 'LOADING', payload: true })
     try {
-        const response = await axios.post('http://localhost:5000/api/users/login', reqobj)
+        const response = await axios.post('https://car-management-app-teal.vercel.app/api/users/login', reqobj)
         localStorage.setItem('user', JSON.stringify(response.data))
 
         dispatch({ type: 'LOADING', payload: false })
@@ -24,7 +24,7 @@ export const userLogin = (reqobj) => async dispatch => {
 export const userRegister = (reqobj) => async dispatch => {
     dispatch({ type: 'LOADING', payload: true })
     try {
-        await axios.post('http://localhost:5000/api/users/register', reqobj)
+        await axios.post('https://car-management-app-teal.vercel.app/api/users/register', reqobj)
         dispatch({ type: 'LOADING', payload: false })
         message.success('Registration successfull')
         setTimeout(() => {
